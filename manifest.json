@@ -1,0 +1,25 @@
+{
+  "name": "CRIPER MOBIL",
+  "short_name": "Criper",
+  "description": "web de consulta Mobil sin conexion ",
+  "background_color": "#51c0ff",
+  "theme_color": "#51C0FF",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "ico.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "ico.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+    
+  ]
+}

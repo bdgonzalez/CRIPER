@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API DE CONSULTA</title>
+    <meta name="description" content="API AMIGABLE CON LOS DISPOSITIVOS MOBILES">
+
+    <meta name="theme-color" content="#51C0FF">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" type="image/png" href="ico.png">
+    <link rel="apple-touch-icon" href="ico.png">
+    <link rel="apple-touch-startup-image" href="ico.png">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+
+    </style>
+
+    <body onload="armar(datosjson)">
+        <div class="buscar">
+
+            <div class="entrada">
+                <div class="btn" onclick="borrar_aguja()"><span class="entypo-erase"></span></div>
+                <input type="text" oninput="filtrado_total(this.value)" id="termino">
+            </div>
+
+        </div>
+        <div class="contenido" id="visual" onscroll="paginacion()">
+
+            <p><img src="ico.png" width="50%" height="50%"></p>
+            <H1>ESPERE EL CONTENIDO SE ESTA CARGADO</H1>
+        </div>
+        <!--fin del contenido-->
+
+        <div class="paginacion">
+            <div><a href="#pagini">Primero</a> </div>
+            <div>
+                <a href="#" id="ant"> <span class="entypo-to-start"></span> </a>
+            </div>
+            <div id="nro_pag"><span class="entypo-arrows-ccw"></span> </div>
+            <div>
+                <a href="#" id="post"> <span class="entypo-to-end"></span></a>
+            </div>
+            <div><a href="#" id='ult'> Ultimo </a></div>
+        </div>
+
+        <style>
+            .modalfichaver {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 200;
+                width: 100vw;
+                height: 100vh;
+                background-color: orange;
+                transition: all;
+                transition-duration: 0.5s;
+            }
+            
+            .opcionesficha {
+                display: flex;
+                width: 100vw;
+                height: 10vh;
+                position: relative;
+                top: 0px;
+                left: 0px;
+                background-color: indigo;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            
+            .opcionesficha a {
+                text-decoration: none;
+                font-size: 4vw;
+                font-weight: bold;
+                color: #fff;
+            }
+            
+            .opcionesficha span {
+                font-size: 8vw;
+                color: #fff;
+            }
+            
+            .ficha {
+                display: flex;
+                overflow: auto;
+                height: 90vh;
+                position: absolute;
+                top: 10vh;
+                width: 100vw;
+                background-color: #dedede;
+                scroll-behavior: smooth;
+                scroll-snap-type: x mandatory;
+            }
+            
+            .paginadatos {
+                width: 100vw;
+                height: 90vh;
+                flex-basis: 100vw;
+                flex-grow: 0;
+                flex-shrink: 0;
+                scroll-snap-align: end;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            
+            .paginadatos>div {
+                width: 80vw;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 7vh;
+                border-bottom: solid 1px #707070;
+            }
+            
+            .paginadatos label {
+                font-weight: bold;
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 4vw;
+            }
+            
+            .paginahistoria {
+                width: 100vw;
+                height: 90vh;
+                flex-basis: 100vw;
+                flex-grow: 0;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .modalfichanover {
+                transition: all;
+                transition-duration: 0.5s;
+                position: absolute;
+                top: 0px;
+                left: -100vw;
+                z-index: 200;
+                width: 100vw;
+                height: 90vh;
+                background-color: orange;
+            }
+        </style>
+
+        <script>
+        </script>
+
+        <div class="modalfichanover" id="modal">
+            <div class="opcionesficha">
+                <div onclick="modal('cerrar')"><span class="entypo-cancel-squared"></span></div>
+                <div><a href="#datos">Datos Articulo</a></div>
+                <div><a href="#historia">Historial</a></div>
+            </div>
+            <div class="ficha">
+
+                <div class="paginadatos" id="datos">
+
+                    <div><label>Estado  </label>
+                        <div id="estado"></div>
+                    </div>
+                    <div><label>Producto </label>
+                        <div id="producto"></div>
+                    </div>
+                    <div><label>Comercio </label>
+                        <div id="comercio"></div>
+                    </div>
+                    <div><label>Falla </label>
+                        <div id="falla"></div>
+                    </div>
+                    <div><label>Domicilio </label>
+                        <div id="domicilio"></div>
+                    </div>
+                    <div><label>Localidad </label>
+                        <div id="localidad"></div>
+                    </div>
+                    <div><label>Telefono </label>
+                        <div id="telefono"></div>
+                    </div>
+                    <div><label>Correo </label>
+                        <div id="correo"></div>
+                    </div>
+                    <div><label>Ticket </label>
+                        <div id="ticket"></div>
+                    </div>
+                    <div><label>Reparar hasta </label>
+                        <div id="rephasta"></div>
+                    </div>
+                    <div><label>Aseguradora </label>
+                        <div id="aseg"></div>
+                    </div>
+                </div>
+                <div class="paginahistoria" id="historia">
+                    <ul>
+                        <li>momomomomom</li>
+                        <li>okmokmokmokm</li>
+                        <li>ojnojnojnojnojnoj</li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--fin de ficha-->
+        </div>
+        <!--fin del modal ficha-->
+
+
+        <script language="JavaScript" type="text/javascript" src="Datos.js"></script>
+        <script language="JavaScript" type="text/javascript" src="armado.js"></script>

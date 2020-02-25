@@ -1,0 +1,207 @@
+@font-face {
+    font-family: entypo;
+    font-style: normal;
+    font-weight: normal;
+    src: url(entypo.woff);
+}
+
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+.entypo-erase:before {
+    content: "\232b"
+}
+
+.entypo-arrows-ccw:before {
+    content: "\1f504"
+}
+
+.entypo-to-end:before {
+    content: "\23ed"
+}
+
+.entypo-to-start:before {
+    content: "\23ee"
+}
+
+.entypo-cancel-squared:before {
+    content: "\274e"
+}
+
+@font-face {
+    font-family: URW Gothic L;
+    src: url(urw_gothic_l_book.woff);
+}
+
+* {
+    font-family: URW Gothic L;
+    padding: 0;
+    margin: 0;
+    font-size: 2.8vw;
+}
+
+.buscar {
+    width: 100vw;
+    height: 15vh;
+    position: absolute;
+    top: 0;
+    background-color: #51C0FF;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contenido {
+    width: 100vw;
+    height: 75vh;
+    position: absolute;
+    top: 15vh;
+    overflow: auto;
+    display: flex;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.pagina {
+    width: 100vw;
+    height: 75.1vh;
+    flex-basis: 100vw;
+    flex-grow: 0;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.fila {
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: solid 1px #dedede;
+}
+
+.fecha span {
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: solid 1px #dedede;
+}
+
+.descripcion span {
+    color: grey;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 264px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.avatar>span {
+    font-size: 2vw;
+}
+
+.avatar>h1 {
+    font-size: 3.5vw;
+}
+
+.paginacion {
+    background-color: #51C0FF;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.paginacion>div {
+    background-color: #E7FBFF;
+    color: grey;
+    border-radius: 100px;
+    width: 10%;
+    height: 80%;
+    min-width: 52px;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 20;
+    box-shadow: 1px 2px 10px #888888;
+}
+
+.paginacion a {
+    font-size: 3vw;
+    text-decoration: none;
+    font-weight: bold;
+    color: grey
+}
+
+.entrada {
+    width: 95%;
+    display: flex;
+    background-color: #fff;
+    height: 9vh;
+    border-radius: 3px;
+    min-height: 45px;
+}
+
+.entrada input {
+    width: 80%;
+    outline-style: none;
+    border: none;
+    font-size: 4vw;
+}
+
+.entrada .btn {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+}
+
+.entrada .btn span {
+    font-size: 5vw;
+}
+
+
+/*---color por estados---*/
+
+.REPARADO {
+    background-color: green;
+    color: #fff;
+}
+
+.REPARABLE {
+    background-color: grey;
+    color: #fff;
+}
+
+.REVISION {
+    background-color: indigo;
+    color: #fff
+}
+
+.REVISAR {
+    background-color: orange;
+    color: #fff
+}
