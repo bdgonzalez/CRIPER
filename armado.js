@@ -1,5 +1,28 @@
 var datosjson = valores;
 
+
+
+
+/*---------------------------------------*/
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./swcriper.js')
+      .then(reg => console.log('Registro de SW exitoso', reg))
+      .catch(err => console.warn('Error al tratar de registrar el sw', err))
+  }
+
+/*---------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
 function armar(arreglo) {
     totalpaginas = 0;
     var filasxpag = 6;
