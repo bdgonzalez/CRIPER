@@ -1,8 +1,6 @@
 var datosjson = valores;
 
 
-
-
 /*---------------------------------------*/
 
 if ('serviceWorker' in navigator) {
@@ -12,11 +10,6 @@ if ('serviceWorker' in navigator) {
   }
 
 /*---------------------------------------*/
-
-
-
-
-
 
 
 
@@ -194,6 +187,31 @@ function cargar(or) {
     if (orden[0].ticket === null) {} else {
         cor.innerHTML = orden[0].ticket;
     }
+
+    var historiaHTML = '<ul>';
+    var notas = JSON.parse(orden[0].notas);
+
+    for (n in notas) {
+
+        historiaHTML += '<li>';
+        historiaHTML += '<div class=\"hfecha\">' + notas[n].fecha + '</div>';
+        historiaHTML += '<div class=\"hestado\">' + notas[n].nota + '</div>';
+        historiaHTML += '<div class=\"hoperador\">' + notas[n].operador + '</div>';
+        historiaHTML += '</li>';
+
+    }
+
+    historiaHTML += '</ul>';
+
+    document.getElementById('historia').innerHTML = historiaHTML;
+    //console.log(historiaHTML);
+
+    var historiaHTML = '';
+
+
+
+
+
 
     modal('ver');
 
