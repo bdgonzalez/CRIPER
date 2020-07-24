@@ -1,7 +1,6 @@
-;
 //asignar un nombre y versión al cache
-const CACHE_NAME = 'v1_cache_criper',
-  urlsToCache = [
+const CACHE_NAME = 'cache_criper-v1',
+  urlsToCache = ['/',
     'urw_gothic_l_book.woff',
     'estilos.css',
     'armado.js',
@@ -48,12 +47,10 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request)
       .then(res => {
-        if (res) {
-          //recuperar del cache
-          return res
-        }
+       
         //recuperar de la petición a la url
-        return fetch(e.request)
+        return res || fetch(e.request);
       })
   )
 })
+
