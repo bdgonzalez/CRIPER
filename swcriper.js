@@ -3,9 +3,9 @@ const CACHE_NAME = 'cache_criper-v1',
     'ico.png',
     'entypo.woff',
     'stilos.css',
-    'index.html',
-    'armado.js',
-    'entypo.woff'             
+    'index.html'
+    
+                
   ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
