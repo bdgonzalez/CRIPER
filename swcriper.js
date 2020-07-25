@@ -5,7 +5,6 @@ const CACHE_NAME = 'cache_criper-v1',
     'stilos.css',
     'index.html',
     'armado.js',
-    'manifest.json',
     'entypo.woff'             
   ]
 
