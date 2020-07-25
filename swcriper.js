@@ -1,8 +1,12 @@
 const CACHE_NAME = 'cache_criper-v1',
   urlsToCache = ['./',
-    
+    'ico.png',
     'entypo.woff',
-    'index.html'             
+    'stilos.css',
+    'index.html',
+    'armado.js',
+    'manifest.json',
+    'entypo.woff'             
   ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
