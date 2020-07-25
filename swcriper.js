@@ -3,7 +3,7 @@ const CACHE_NAME = 'cache_criper-v3',
    
     'entypo.woff',
         
-    'stilos.css',
+    'estilos.css',
     'index.html'
     
                 
