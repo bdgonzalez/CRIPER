@@ -1,13 +1,13 @@
-const CACHE_NAME = 'cache_criper-v2',
+const CACHE_NAME = 'cache_criper-v3',
   urlsToCache = ['./',
-    'ico.png',
+   
     'entypo.woff',
-    'armado.js',             
+        
     'stilos.css',
     'index.html'
     
                 
-  ]
+  ];
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
 self.addEventListener('install', e => {
