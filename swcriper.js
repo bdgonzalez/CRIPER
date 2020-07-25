@@ -1,11 +1,13 @@
-const CACHE_NAME = 'cache_criper-v3',
+const CACHE_NAME = 'cache_criper-v4',
   urlsToCache = ['./',
-   
+    'ico.png',
     'entypo.woff',
-        
+    'armado.js',    
     'estilos.css',
-    'index.html'
-    
+    'index.html',
+    'manifest.json',
+     'Datos.js',
+     'urw_gothic_l_book.woff'            
                 
   ];
 
