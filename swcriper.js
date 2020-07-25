@@ -1,7 +1,8 @@
-const CACHE_NAME = 'cache_criper-v1',
+const CACHE_NAME = 'cache_criper-v2',
   urlsToCache = ['./',
     'ico.png',
     'entypo.woff',
+    'armado.js',             
     'stilos.css',
     'index.html'
     
